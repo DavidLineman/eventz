@@ -5,7 +5,7 @@
   <div class = "details">
     <h1><%= @event.name %></h1>
     <h2>
-      <%= price(@event) %>
+      <%= pluralize(@event.capacity, "spot" )%> &bull; <%= price(@event) %>
     </h2>
     <h3>
       <%= day_time(@event) %> in <%= @event.location %>
