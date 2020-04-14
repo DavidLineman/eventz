@@ -3,17 +3,19 @@ class Registration < ApplicationRecord
 
   validates :name, presence: true
 
-  validates :email, format: { with: /\S+@\S+\ }
+  validates :email, format: { with: /\S+@\S+/ }
 
-  HOW_HEARD_OPTIONS = {
+  HOW_HEARD_OPTIONS = [
     'Newsletter',
     'Blog Post',
     'Twitter',
     'Web Post',
-    'Friend/Coworker',
+    'Friend or Coworker',
     'Other'
+  ]
+
+  validates :how_heard, inclusion: { 
+    in: HOW_HEARD_OPTIONS 
   }
 
-  validates :how_heard,
-            :inclusion, { in: HOW_HEARD_OPTIONS }
 end
