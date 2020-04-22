@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @event = Event.find(params[:event_id])
-    @registration = @event.registration.new(params[:registration])
+    @registration = @event.registrations.new(params[:registration])
 
     if @registration.save
       redirect_to event_registrations_url(@event), 
