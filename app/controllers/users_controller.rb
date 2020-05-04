@@ -34,6 +34,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to events_url, alert: "Your account has been deleted."
+  end
+
   private 
 
     def user_params
