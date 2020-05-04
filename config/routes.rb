@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  get "signup" => "user#new"
+  get "signup" => "users#new"
 end
