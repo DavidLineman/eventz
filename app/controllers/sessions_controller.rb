@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
+    params[:email]
+    params[:password]
   end
 
   def destroy
