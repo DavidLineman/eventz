@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_signin, except: [:new, :create]
 
   def index
     @users = User.all
@@ -38,6 +39,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    session[:user_id] = nil
     redirect_to events_url, alert: "Your account has been deleted."
   end
 
