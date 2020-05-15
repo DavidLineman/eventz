@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   
+  resources :categories
   root "events#index"
 
   resources :events do 
